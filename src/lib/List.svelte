@@ -1,9 +1,7 @@
 <script>
     import Button from "./Button.svelte";
-    import Editor from "https://cdn.fouita.com/assets/fouita/tw-editor-v2.min.mjs"
     import Image from "./Image.svelte";
     import TextCard from "./TextCard.svelte";
-    import Popup from "./Popup.svelte";
 
     export let card = []
     export let settings = {}
@@ -38,9 +36,6 @@
 
 </style>
 <div class="w-full flex justify-center border">
-    <!-- <div class="w-full bg-red-300  font-bold">
-        {card.titre}
-    </div> -->
 
     <div class="w-full font-bold flex {posImg} {settings.transparent?'':'bg-primary'} {settings.popup?'cursor-pointer':''}" 
         style="--ft-primary:{settings.bgCard};

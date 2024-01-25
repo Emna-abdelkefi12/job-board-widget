@@ -1,9 +1,7 @@
 <script>
     import Button from "./Button.svelte";
-    import Editor from "https://cdn.fouita.com/assets/fouita/tw-editor-v2.min.mjs"
     import Image from "./Image.svelte";
     import TextCard from "./TextCard.svelte";
-    import Popup from "./Popup.svelte";
 
     export let card = []
     export let settings = {}
