@@ -47,17 +47,17 @@
             <Image {settings} {editable} {card}/>
         {/if}
         
-        <div class="w-full p-5 flex items-center space-x-10">
+        <div class="w-full p-5 sm:flex items-center sm:space-x-10 space-x-0 space-y-10 sm:space-y-0">
             <TextCard {settings} {editable} bind:card />
             
             {#if settings.btn1 || settings.btn2}
-                <div class="{settings.inline?'flex':''} justify-end w-2/5">
+                <div class="{settings.inline?'flex':''} justify-end sm:w-2/5">
                     {#if settings.btn1}
-                        <Button label={card.button1} border={settings.btnBorder1} borderColor={settings.btnBorderColor1} link={card.link1} {settings}/>
+                        <Button label={settings.button1} color={settings.btnColor1} gradient={settings.btnGradient1} text={settings.btnTextColor1} border={settings.btnBorder1} borderColor={settings.btnBorderColor1} colorType={settings.colorType1} link={card.link1} {settings}/>
                     {/if}
                     
                     {#if settings.btn2}
-                        <Button label={card.button2} border={settings.btnBorder2} borderColor={settings.btnBorderColor2} link={card.link2} {settings} {mt} {ml} />
+                        <Button label={settings.button2} color={settings.btnColor2} gradient={settings.btnGradient2} text={settings.btnTextColor2} border={settings.btnBorder2} borderColor={settings.btnBorderColor2} colorType={settings.colorType2} link={card.link2} {settings} {mt} {ml} />
                     {/if}
                 </div>
             {/if}

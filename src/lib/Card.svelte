@@ -56,11 +56,11 @@
             {#if settings.btn1 || settings.btn2}
                 <div class="{settings.inline?'flex':''} justify-end">
                     {#if settings.btn1}
-                        <Button label={card.button1} border={settings.btnBorder1} borderColor={settings.btnBorderColor1} link={card.link1} {settings}/>
+                        <Button label={settings.button1} color={settings.btnColor1} gradient={settings.btnGradient1} text={settings.btnTextColor1} border={settings.btnBorder1} borderColor={settings.btnBorderColor1} colorType={settings.colorType1} link={card.link1} {settings}/>
                     {/if}
                     
                     {#if settings.btn2}
-                        <Button label={card.button2} border={settings.btnBorder2} borderColor={settings.btnBorderColor2} link={card.link2} {settings} {mt} {ml} />
+                        <Button label={settings.button2} color={settings.btnColor2} gradient={settings.btnGradient1} text={settings.btnTextColor2} border={settings.btnBorder2} borderColor={settings.btnBorderColor2} colorType={settings.colorType2} link={card.link2} {settings} {mt} {ml} />
                     {/if}
                 </div>
             {/if}

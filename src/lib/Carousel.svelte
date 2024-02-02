@@ -65,7 +65,7 @@
 
 {#if Array.isArray(cards)}
 	<div class="w-full">
-		<Content {__service} bind:index {autoplay} {duration} {startIndex} {draggable} {multipleDrag}  bind:currentPerPage {perPage} {settings} {listPosts} >  
+		<Content {__service} bind:index {autoplay} {duration} {startIndex} {draggable} {multipleDrag}  bind:currentPerPage {perPage} {settings} {listPosts} {editable} >  
 			<span class="text-tertiary mx-2 flex items-center justify-center controls" slot="left-control" style="--ft-tertiary:{settings.controlsColor}">
 				<ChevronLeft class="{settings.perSlide > 3&&settings.perCol == 1 ? 'h-6 w-6':'w-8 h-8'}" />
 			</span>

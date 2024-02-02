@@ -5,7 +5,7 @@
 			<div class="space-y-{settings.gap}">
 				{#each posts as post,i}  
 						<div class="w-full flex items-center pr-{settings.gap}"> 
-							<Card bind:card={post} bind:index i={i+(j*settings.perCol)} {__service} {settings}/>  
+							<Card bind:card={post} {editable} bind:index i={i+(j*settings.perCol)} {__service} {settings}/>  
 						</div>
 				{/each}  
 			</div> 
@@ -58,6 +58,7 @@
 	export let __service 
 	export let currentPerPage
 	export let index
+	export let editable
 
 	const dispatch = createEventDispatcher()
 
