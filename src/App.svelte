@@ -7,22 +7,22 @@
   import EditContent from "./edit/EditContent.svelte";
 
   export let cards = [{text:[{html:"Title",klass:""}],button1:"Apply Now1",button2: "Learn More1",link1:"https://www.google.com/?&rlz=1C1PNJJ_frTN1080TN1080&hl=fr",
-  link2:"https://elfsight.com/job-board-widget/",
+  link2:"https://colorhunt.co/",showBtn2: true,showSalary: true,
   image:"https://cdn2.fouita.com/0x2729/media/imgs/image262.png",salary: [{html:"salary",klass:""}]},
   {text:[{html:"Title",klass:""}],button1:"Apply Now2",button2: "Learn More2",link1:"https://www.google.com/?&rlz=1C1PNJJ_frTN1080TN1080&hl=fr",
-  link2:"https://elfsight.com/job-board-widget/",
+  link2:"https://colorhunt.co/",showBtn2: true,showSalary: true,
   image:"https://cdn2.fouita.com/0x2729/media/imgs/image30.png",salary: [{html:"salary",klass:""}]},
   {text:[{html:"Title",klass:""}],button1:"Apply Now2",button2: "Learn More2",link1:"https://www.google.com/?&rlz=1C1PNJJ_frTN1080TN1080&hl=fr",
-  link2:"https://elfsight.com/job-board-widget/",
+  link2:"https://colorhunt.co/",showBtn2: true,showSalary: true,
   image:"https://cdn2.fouita.com/0x2729/media/imgs/image262.png",salary: [{html:"salary",klass:""}]},
   {text:[{html:"Title",klass:""}],button1:"Apply Now2",button2: "Learn More2",link1:"https://www.google.com/?&rlz=1C1PNJJ_frTN1080TN1080&hl=fr",
-  link2:"https://elfsight.com/job-board-widget/",
+  link2:"https://colorhunt.co/",showBtn2: true,showSalary: true,
   image:"https://cdn2.fouita.com/0x2729/media/imgs/image30.png",salary: [{html:"salary",klass:""}]},
   {text:[{html:"Title",klass:""}],button1:"Apply Now2",button2: "Learn More2",link1:"https://www.google.com/?&rlz=1C1PNJJ_frTN1080TN1080&hl=fr",
-  link2:"https://elfsight.com/job-board-widget/",
+  link2:"https://colorhunt.co/",showBtn2: true,showSalary: true,
   image:"https://cdn2.fouita.com/0x2729/media/imgs/image262.png",salary: [{html:"salary",klass:""}]},
   {text:[{html:"Title",klass:""}],button1:"Apply Now3",button2: "Learn More3",link1:"https://www.google.com/?&rlz=1C1PNJJ_frTN1080TN1080&hl=fr",
-  link2:"https://elfsight.com/job-board-widget/",
+  link2:"https://colorhunt.co/",showBtn2: true,showSalary: true,
   image:"https://cdn2.fouita.com/0x2729/media/imgs/image30.png",salary: [{html:"salary",klass:""}]}]
   export let image = [{img:"https://cdn2.fouita.com/0x2729/media/imgs/image262.png"}]
   export let __service         
@@ -59,7 +59,7 @@
     border: 2,
     gap:5,
     borderColor: "30 440 255",
-    bgCard: "197 93 161",
+    bgCard: "180 123 132",
 
     //buttons
     colorType1: "color",
@@ -73,15 +73,15 @@
     btn2: true,
     btnBorder1: 2,
     btnBorder2: 2,
-    btnBorderColor1: "0 0 0",
-    btnBorderColor2: "255 255 255",
-    btnColor1: "255 255 255",
-    btnColor2: "0 255 255",
+    btnBorderColor1: "180 123 132",
+    btnBorderColor2: "180 123 132",
+    btnColor1: "255 231 243",
+    btnColor2: "255 231 243",
     btnTextColor1: "0 5 25",
     btnTextColor2: "0 5 25",
     btnGradient1: "0 0 0",
-    btnGradient2: "0 0 0",
-
+    btnGradient2: "180 123 132",
+    
     //image
     image: true,
     theme: "card", // card, standard
@@ -106,7 +106,6 @@
   let background
   let bgImage
   let parentNode
-  let index = -1
 
   $:if(settings.grids == 4) {
     gridsVal = "lg:grid-cols-4 sm:grid-cols-2 grid-cols-1"
@@ -159,27 +158,21 @@
       
         {#if settings.style == "grid"}
           <div class="grid {gridsVal} gap-{settings.gap} flex justify-center" >
-            {#each cards as card,i}
-              <Card bind:index {i} {card} {settings} {editable} />
+            {#each cards as card}
+              <Card  {card} {settings} {editable} />
             {/each}
           </div>
         {:else if settings.style == "carousel"}
-          <Carousel bind:index bind:settings bind:cards {editable} />
+          <Carousel bind:settings bind:cards {editable} />
         {:else}
           <div class=" gap-{settings.gap} flex flex-col justify-center w-full"
             style="">
-            {#each cards as card,i}
-              <List bind:index {i} {card} {settings} {editable} />
+            {#each cards as card}
+              <List {card} {settings} {editable} />
             {/each}
           </div>
         {/if}
       </div>
-      
-      {#if index>-1 && !editable}
-        <Popup bind:card={cards[index]} bind:index {settings} {editable}  />
-      {/if}
-
-    
     
     </div>
 

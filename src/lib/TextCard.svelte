@@ -27,8 +27,10 @@
     <div class="{editable? 'p-1 border border-dashed border-gray-400 ':''} w-full">
       <Editor bind:arr_html={card.text} {editable}/>
     </div> 
-
-    <div class="{margin} {editable? 'p-1 border border-dashed border-gray-400 ':''} w-full">
-        <Editor bind:arr_html={card.salary} {editable}/>
-      </div> 
+	
+	{#if card.showSalary}
+    	<div class="{margin} {editable? 'p-1 border border-dashed border-gray-400 ':''} w-full">
+      	  <Editor bind:arr_html={card.salary} {editable}/>
+      	</div> 
+	{/if}
 </div>

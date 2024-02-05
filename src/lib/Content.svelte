@@ -1,11 +1,11 @@
 <div class="carousel relative w-full mx-auto" bind:this={parentNode}>
 
 	<div class="slides" bind:this={siema} > 
-		{#each listPosts as posts,j}
+		{#each listPosts as posts}
 			<div class="space-y-{settings.gap}">
-				{#each posts as post,i}  
+				{#each posts as post}  
 						<div class="w-full flex items-center pr-{settings.gap}"> 
-							<Card bind:card={post} {editable} bind:index i={i+(j*settings.perCol)} {__service} {settings}/>  
+							<Card bind:card={post} {editable} {__service} {settings}/>  
 						</div>
 				{/each}  
 			</div> 
@@ -57,7 +57,6 @@
 	export let rtl = false
 	export let __service 
 	export let currentPerPage
-	export let index
 	export let editable
 
 	const dispatch = createEventDispatcher()

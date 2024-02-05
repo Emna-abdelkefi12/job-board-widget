@@ -6,15 +6,8 @@
     export let card = []
     export let settings = {}
     export let editable
-    export let index
-    export let i
 
     let posImg
-
-    function click(){
-        if(!settings.popup) return
-        index = i
-    }
 
     $:if (settings.posImg == "left") {
 		posImg = "sm:flex-row flex-col"
@@ -37,13 +30,12 @@
 </style>
 <div class="w-full flex justify-center border">
 
-    <div class="w-full font-bold flex {posImg} {settings.transparent?'':'bg-primary'} {settings.popup?'cursor-pointer':''}" 
+    <div class="w-full font-bold flex {posImg} {settings.transparent?'':'bg-primary'}" 
         style="--ft-primary:{settings.bgCard};
         {settings.display == 'elevated'? 'box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08)' : ''};
         border-width: {settings.border}px;
-        border-color:rgb({settings.borderColor});"
-        on:click={click}>
-        {#if settings.image}
+        border-color:rgb({settings.borderColor});">
+        {#if settings.image && card.image}
             <Image {settings} {editable} {card}/>
         {/if}
         
@@ -56,7 +48,7 @@
                         <Button label={settings.button1} color={settings.btnColor1} gradient={settings.btnGradient1} text={settings.btnTextColor1} border={settings.btnBorder1} borderColor={settings.btnBorderColor1} colorType={settings.colorType1} link={card.link1} {settings}/>
                     {/if}
                     
-                    {#if settings.btn2}
+                    {#if settings.btn2 && card.showBtn2}
                         <Button label={settings.button2} color={settings.btnColor2} gradient={settings.btnGradient2} text={settings.btnTextColor2} border={settings.btnBorder2} borderColor={settings.btnBorderColor2} colorType={settings.colorType2} link={card.link2} {settings} {mt} {ml} />
                     {/if}
                 </div>

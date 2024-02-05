@@ -105,7 +105,7 @@
 				</div>
 			</div>
 			{#if selectedIndex == i}
-				<EditCard bind:card/>
+				<EditCard bind:card bind:cards />
 				
 			{/if}
 		</div> 
