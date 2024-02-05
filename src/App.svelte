@@ -29,10 +29,10 @@
   export let header = [{html:"Our Gallery",klass:""}]
   export let settings = {
     //widget  
-    style: "grid",
+    style: "grid", // grid, carousel, list
     header: true,
     width: 1000,
-    bgType: "color",
+    bgType: "color", // gradient, image
     bgImage: "https://cdn2.fouita.com/0x2729/media/imgs/image262.png",
     bgColor: "780 180 255",
     bgGradient: "0 255 255",
@@ -42,7 +42,7 @@
     grids: 2,
 
     //carousel
-    max:503,
+    max:50, // max items in carousel
 		perSlide: 2,
 		perCol: 1,
 		controls: true,     
@@ -55,7 +55,7 @@
 
     //cards
     transparent: false,
-    display: "elevated",
+    display: "elevated", // elevated, flat
     border: 2,
     gap:5,
     borderColor: "30 440 255",
@@ -66,7 +66,7 @@
     colorType2: "gradient",
     button1: "Apply ",
     button2: "Learn ",
-    target: "_Blank",
+    target: "_blank", // _blank, _self
     inline: false,
     space: 10,
     btn1: true,
@@ -84,20 +84,20 @@
 
     //image
     image: true,
-    theme: "card",
-    posImg: "left",
+    theme: "card", // card, standard
+    posImg: "left", // left, right, top, bottom
     alignImg: "center", //start,end,center
     widthImg: 150,
     heightImg: 150,
-    roundImg: "full",
+    roundImg: "full", //sm, md, lg, xl, full
 
     //salary
     salary: true,
     salPos: "inline",
 
-    //popup
+    //TODO- popup to remove
     popup: true,
-    popupImgPos: "-reverse",
+    popupImgPos: "-reverse", // -reverse, 
     
   }
   export let editable = true
